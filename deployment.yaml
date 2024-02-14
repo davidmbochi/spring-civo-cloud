@@ -1,0 +1,33 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: spring-boot-app
+    name: spring-boot-app-deployment
+    namespace: default
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: spring-boot-app-deployment
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        labels:
+          app: spring-boot-app-deployment
+      spec:
+        containers:
+        - image: springbootguru/spring-boot-app:0.0.1.RELEASE
+          imagePullPolicy: IfNotPresent
+          name: spring-boot-app
+        restartPolicy: Always
+        terminationGracePeriodSeconds: 30
+kind: List
+metadata:
+  resourceVersion: ""
