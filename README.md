@@ -168,7 +168,7 @@ To ensure the requests applied by the service are being routed by Ingresss, use 
 kubectl apply -f ingress.yaml
 ```
 ## Test the application
-With this in place, your application is now deployed to Civo Kubernetes cluster. To verify your application is working as expected go to `spring.boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com`.
+With this in place, your application is now deployed to Civo Kubernetes cluster. To verify your application is working as expected go to `spring-boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com`.
 
 As a result, the following JSON response should be returned on the browser.
 
