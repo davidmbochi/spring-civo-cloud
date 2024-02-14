@@ -20,7 +20,7 @@ kubectl cluster-info
 ```
 
 ## Create a Spring Boot image
-The **Dockerfile** for the Spring Boot app is provided at the root of the application.
+The *Dockerfile* for the Spring Boot app is provided at the root of the application.
 
 ```yaml
 # initialize build and set base image for first stage
@@ -47,7 +47,7 @@ COPY --from=build /home/app/target/spring-boot-app*.jar /home/app/spring-boot-ap
 
 CMD ["java", "-jar", "/home/app/spring-boot-app.jar"]
 ```
-To create an image of the Spring Boot app using the **Dockerfile**, use the following command.
+To create an image of the Spring Boot app using the *Dockerfile*, use the following command.
 
 ```bash
 docker build -t springbootguru/spring-boot-app:0.0.1.RELEASE .
@@ -66,7 +66,7 @@ docker image push springbootguru/spring-boot-app:0.0.1.RELEASE
 ```
 
 ## Create deployment defination file
-The **deployment.yaml** file is provided at the root of the application. Here is the configuration:
+The *deployment.yaml* file is provided at the root of the application. Here is the configuration:
 
 ```yaml
 apiVersion: v1
@@ -110,7 +110,7 @@ kubectl apply -f deployment.yaml
 ```
 
 ## Create service defination file
-The **service.yaml** file defination file is provided at the root of the application. Here is the configuration:
+The *service.yaml* file defination file is provided at the root of the application. Here is the configuration:
 
 ```yaml
 apiVersion: v1
@@ -137,7 +137,7 @@ To expose a deployment using the service defination file defined abbove, use the
 kubectl apply -f service.yaml
 ```
 ## Create an Ingress defination file
-The **ingress.yaml** defination file is provided at the root of the application. Here is the configuration:
+The *ingress.yaml* defination file is provided at the root of the application. Here is the configuration:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -150,7 +150,7 @@ metadata:
   name: spring-boot-app-ingress
 spec:
   rules:
-    - host: spring-boot-app.1e908dea-7226-44ff-b397-f9e22054893a.k8s.civo.com
+    - host: spring-boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com
       http:
         paths:
           -
@@ -168,7 +168,7 @@ To ensure the requests applied by the service are being routed by Ingresss, use 
 kubectl apply -f ingress.yaml
 ```
 ## Test the application
-With this in place, your application is now deployed to Civo Kubernetes cluster. To verify your application is working as expected go to `spring.boot-app.<cluster ID>.k8s.civo.com`.
+With this in place, your application is now deployed to Civo Kubernetes cluster. To verify your application is working as expected go to `spring.boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com`.
 
 As a result, the following JSON response should be returned on the browser.
 
