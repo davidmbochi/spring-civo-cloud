@@ -1,4 +1,4 @@
-## Deploy a Spring Boot application to the Civo Kubernetes cluster
+## Deploy a Spring Boot Application to the Civo Kubernetes Cluster
 This is a Spring Boot application that was developed to be deployed to the Civo Kubernetes cluster. The following are the steps that you use to deploy the application if you are using a Linux machine.
 
 ## Create a Kubernetes cluster
