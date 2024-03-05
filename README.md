@@ -174,35 +174,35 @@ As a result, the following JSON response should be returned to the browser.
 
 ```JSON
 [
-{
-"id": 1,
-"fistName": "john",
-"lastName": "doe",
-"email": "john@javawhizz.com"
-},
-{
-"id": 2,
-"fistName": "mary",
-"lastName": "public",
-"email": "mary@javawhizz.com"
-},
-{
-"id": 3,
-"fistName": "nelson",
-"lastName": "jamal",
-"email": "nelson@javawhizz.com"
-},
-{
-"id": 4,
-"fistName": "Diane",
-"lastName": "Phane",
-"email": "diane@javawhizz.com"
-},
-{
-"id": 5,
-"fistName": "steve",
-"lastName": "jobs",
-"email": "steve@javawhizz.com"
-}
+  {
+    "id": 1,
+    "fistName": "john",
+    "lastName": "doe",
+    "email": "john@javawhizz.com"
+  },
+  {
+    "id": 2,
+    "fistName": "mary",
+    "lastName": "public",
+    "email": "mary@javawhizz.com"
+  },
+  {
+    "id": 3,
+    "fistName": "nelson",
+    "lastName": "jamal",
+    "email": "nelson@javawhizz.com"
+  },
+  {
+    "id": 4,
+    "fistName": "Diane",
+    "lastName": "Phane",
+    "email": "diane@javawhizz.com"
+  },
+  {
+    "id": 5,
+    "fistName": "steve",
+    "lastName": "jobs",
+    "email": "steve@javawhizz.com"
+  }
 ]
 ```
