@@ -1,7 +1,7 @@
-## Deploy a Spring application to civo kubernetes cluster
-This is a Spring Boot application that was developed with the aim of being deployed to Civo kubernetes cluster. The following are the steps that you use to deploy the application if you are using a Linux machine.
+## Deploy a Spring Boot application to the Civo Kubernetes cluster
+This is a Spring Boot application that was developed to be deployed to the Civo Kubernetes cluster. The following are the steps that you use to deploy the application if you are using a Linux machine.
 
-## Create a kubernetes cluster
+## Create a Kubernetes cluster
 
 ```bash
 sudo civo kubernetes create spring-boot-app --size=g4s.kube.medium --nodes=3 --wait
@@ -65,7 +65,7 @@ docker run -d -p 8080:8080 springbootguru/spring-boot-app:0.0.1.RELEASE
 docker image push springbootguru/spring-boot-app:0.0.1.RELEASE
 ```
 
-## Create deployment defination file
+## Create a deployment definition file
 The *deployment.yaml* file is provided at the root of the application. Here is the configuration:
 
 ```yaml
@@ -103,14 +103,14 @@ kind: List
 metadata:
   resourceVersion: ""
 ```
-To create a deployment on Civo Kubernetes cluster, use the following command.
+To create a deployment on the Civo Kubernetes cluster, use the following command.
 
 ```bash
 kubectl apply -f deployment.yaml
 ```
 
-## Create service defination file
-The *service.yaml* file defination file is provided at the root of the application. Here is the configuration:
+## Create a service definition file
+The *service.yaml* file definition file is provided at the root of the application. Here is the configuration:
 
 ```yaml
 apiVersion: v1
@@ -131,13 +131,13 @@ spec:
   sessionAffinity: None
   type: NodePort
 ```
-To expose a deployment using the service defination file defined abbove, use the following command.
+To expose a deployment using the service definition file defined above, use the following command.
 
 ```bash
 kubectl apply -f service.yaml
 ```
-## Create an Ingress defination file
-The *ingress.yaml* defination file is provided at the root of the application. Here is the configuration:
+## Create an Ingress definition file
+The *ingress.yaml* definition file is provided at the root of the application. Here is the configuration:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -162,15 +162,15 @@ spec:
             path: /
             pathType: "Prefix"
 ```
-To ensure the requests applied by the service are being routed by Ingresss, use the following command.
+To ensure the requests applied by the service are being routed by Ingres, use the following command.
 
 ```bash
 kubectl apply -f ingress.yaml
 ```
 ## Test the application
-With this in place, your application is now deployed to Civo Kubernetes cluster. To verify your application is working as expected go to `spring-boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com`.
+With this in place, your application is now deployed to the Civo Kubernetes cluster. To verify your application is working as expected go to `spring-boot-app.<YOUR_CLUSTER_ID>.k8s.civo.com`.
 
-As a result, the following JSON response should be returned on the browser.
+As a result, the following JSON response should be returned to the browser.
 
 ```JSON
 [
