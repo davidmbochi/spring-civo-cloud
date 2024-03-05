@@ -206,3 +206,9 @@ As a result, the following JSON response should be returned to the browser.
   }
 ]
 ```
+## Delete the cluster
+It is always a good practice to delete clusters that are of no value to prevent incurring unnecessary charges. As a result, use the following command to delete the cluster.
+
+```bash
+sudo civo kubernetes remove spring-boot-app
+```
